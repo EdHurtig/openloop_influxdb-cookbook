@@ -17,10 +17,8 @@
 # limitations under the License.
 
 influxdb 'main' do
-  source node[:influxdb][:source]
-  checksum node[:influxdb][:checksum]
+  source 'https://s3.amazonaws.com/influxdb/influxdb_0.9.4.2_amd64.deb'
   config node[:influxdb][:config] # Or if >=  0.9.x it will use node[:influxdb][:zero_nine][:config]
-  action :create
 end
 
 influxdb_admin 'admin' do
