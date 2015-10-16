@@ -18,3 +18,5 @@ suites:
     run_list:
       - recipe[et_influxdb::default]
     attributes:
+      et_influxdb:
+        password: changeme

@@ -28,8 +28,7 @@ influxdb_admin 'admin' do
   not_if { node['et_influxdb']['password'].empty? }
 end
 
-
-influxdb_database 'grafana'
+influxdb_database 'metrics'
 
 influxdb_retention_policy "foodb default retention policy" do
   policy_name 'default'
