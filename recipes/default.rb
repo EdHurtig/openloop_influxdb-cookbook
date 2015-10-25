@@ -16,6 +16,13 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+directory node[:influxdb][:log_dir] do
+  recursive true
+end
+
+node.set[:influxdb][:config]['[udp]'] = node[:influxdb][:config][:udp]
+node.rm(:influxdb, :config, :udp)
+
 influxdb 'main' do
   source 'https://s3.amazonaws.com/influxdb/influxdb_0.9.4.2_amd64.deb'
   config node[:influxdb][:config] # Or if >=  0.9.x it will use node[:influxdb][:zero_nine][:config]
