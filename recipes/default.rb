@@ -35,9 +35,9 @@ end
 
 influxdb_database 'metrics'
 
-influxdb_retention_policy "foodb default retention policy" do
+influxdb_retention_policy 'default retention policy' do
   policy_name 'default'
-  database    'grafana'
+  database    'metrics'
   duration    '1w'
   replication 1
 end
