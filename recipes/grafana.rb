@@ -1,6 +1,6 @@
 include_recipe "grafana"
 
-fail "Set a password! node['et_influxdb']['passsword']" unless node['et_influxdb']['passsword']
+fail "Set a password! node['et_influxdb']['passsword']" unless node['et_influxdb']['password']
 
 grafana_datasource 'influxdb-main' do
   source(
